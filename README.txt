@@ -1,0 +1,1 @@
+Swift scaality functional tests
