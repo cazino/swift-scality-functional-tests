@@ -7,3 +7,4 @@ cat >> local.conf <<EOF
 disable_all_services
 enable_service key mysql s-proxy s-object s-container s-account
 EOF
+./stack.sh
