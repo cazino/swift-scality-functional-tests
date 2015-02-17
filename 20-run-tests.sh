@@ -1,6 +1,5 @@
 #!/bin/bash -xue
 
-cd /opt/stack/swift
-sudo pip install -r test-requirements.txt
-cd test/functional
-nosetests --exe --with-xunit --xunit-file=nosetests.xml
+SWIFT_DIR=/opt/stack/swift
+sudo pip install -r $SWIFT_DIR/test-requirements.txt
+nosetests -w $SWIFT_DIR/test/functional --exe --with-xunit --xunit-file=${WORKSPACE}/nosetests.xml
