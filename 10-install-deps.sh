@@ -6,5 +6,6 @@ cp ./samples/local.conf local.conf
 cat >> local.conf <<EOF
 disable_all_services
 enable_service key mysql s-proxy s-object s-container s-account
+SWIFT_BRANCH=${DEVSTACK_BRANCH}
 EOF
 ./stack.sh
