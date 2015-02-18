@@ -7,7 +7,7 @@ function common() {
 disable_all_services
 enable_service key mysql s-proxy s-object s-container s-account
 EOF
-    cp extras.d/55-swift-sporxyd.sh /devstack/extras.d/55-swift-sproxyd.sh
+    cp extras.d/55-swift-sproxyd.sh /devstack/extras.d/55-swift-sproxyd.sh
     ./devstack/stack.sh    
 }
 
