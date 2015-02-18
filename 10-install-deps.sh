@@ -11,20 +11,23 @@ EOF
 }
 
 function get_release_number() {
-    release_string=`lsb_release -r`
-    sentence="this is a story"
-    release_array=($release_string)
-    release_number=${release_array[1]:0:2}
+    release_string=`lsb_release -r -s`
+    release_number=${release_string:0:2}
     echo $release_number
 }
 
 
 function main() {
+    # Workaround on Ubuntu 12 where some reason, devstack does not install
+    # setuptools properly.
+    # Installing it trough os package is not an option since devstack will uninstall it
+    # if this is not a very recent version.
     release_number=$(get_release_number)
     if [ "$release_number" -eq "12" ]; then
         wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python;       
     fi
     common
+    echo "SCAL_PASS=${SCAL_PASS}"
 }
 
 main
