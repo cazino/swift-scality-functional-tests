@@ -27,7 +27,6 @@ function main() {
         wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python;       
     fi
     common
-    echo "SCAL_PASS=${SCAL_PASS}"
 }
 
 main
