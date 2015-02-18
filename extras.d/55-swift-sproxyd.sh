@@ -11,6 +11,7 @@ function enable_sproxyd_driver() {
         iniset ${swift_node_config} app:object-server sproxyd_path /proxy/chord_path
         # splice need to be configurable
         iniset ${swift_node_config} app:object-server splice yes
+    done
 }
 
 if is_service_enabled s-object; then
