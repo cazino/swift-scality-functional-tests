@@ -11,8 +11,8 @@ EOF
 }
 
 function get_release_number() {
-    release_string=`lsb_release -r -s`
-    release_number=${release_string:0:2}
+    local release_string=`lsb_release -r -s`
+    local release_number=${release_string:0:2}
     echo $release_number
 }
 
